@@ -26,17 +26,15 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Clone dependency
-        run: git clone https://github.com/Peersyst/fast-auth.git ../fast-auth
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Print currect folder
-        run: pwd
-      - name: Print subfolders
-        run: ls -l
       - uses: pnpm/action-setup@v4
         with:
           version: 10 # or whatever version you use
+      - name: Clone fast-auth
+        run: git clone https://github.com/Peersyst/fast-auth.git ../fast-auth
+      - name: Build fast-auth
+        run: cd ../fast-auth/packages/sdks/browser && pnpm install && pnpm build && cd ../../../../demo-fast-auth
+      - name: Checkout
+        uses: actions/checkout@v4
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
