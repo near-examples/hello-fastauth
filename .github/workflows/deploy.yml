@@ -62,10 +62,6 @@ jobs:
         run: pnpm install
       - name: Link fast-auth
         run: pnpm add ../fast-auth/packages/sdks/browser
-      - name: Print files
-        run: ls -l
-      - name: Print Next config
-        run: cat next.config.ts
       - name: Build with Next.js
         run: pnpm build
       - name: Upload artifact
