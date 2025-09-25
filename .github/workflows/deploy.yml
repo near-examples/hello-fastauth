@@ -32,7 +32,7 @@ jobs:
       - name: Clone fast-auth
         run: git clone https://github.com/Peersyst/fast-auth.git ../fast-auth
       - name: Build fast-auth
-        run: cd ../fast-auth/packages/sdks/browser && pnpm install && pnpm build && cd ../../../../demo-fast-auth
+        run: cd ../fast-auth/packages/sdks/browser && pnpm install && pnpm build && cd ../../../../hello-fastauth
       - name: Checkout
         uses: actions/checkout@v4
       - name: Setup Node
