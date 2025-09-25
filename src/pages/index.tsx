@@ -17,7 +17,7 @@ import {
   providers,
 } from "near-api-js";
 import { KeyType } from "@near-js/crypto";
-import { fastAuthContractId } from "@/auth_config.json";
+import { fastAuthContractId, appOrigin } from "@/auth_config.json";
 
 function generateRandomAccountId(): string {
   const now = Date.now();
@@ -147,7 +147,7 @@ export default function HelloNear() {
     setStatus(`Requesting transaction confirmation from Auth0`);
 
     await signer.requestTransactionSignature({
-      redirectUri: "http://localhost:3000",
+      redirectUri: appOrigin,
       imageUrl:
         "https://media.licdn.com/dms/image/v2/D4D0BAQH5KL-Ge_0iug/company-logo_200_200/company-logo_200_200/0/1696280807541/peersyst_technology_logo?e=2147483647&v=beta&t=uFYvQ5g6HDoIprYhNNV_zC7tzlBkvmPRkWzuLuDpHtc",
       name: "Peersyst Technology",
