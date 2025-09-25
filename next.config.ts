@@ -11,6 +11,10 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: true,
   },
 
+  images: {
+    unoptimized: true,
+  },
+
   transpilePackages: ["@fast-auth/browser"],
 };
 
