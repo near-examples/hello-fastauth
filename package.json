@@ -1,0 +1,36 @@
+{
+  "name": "demo-hot-selector-n-jsonrpc-client",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "@fast-auth/browser": "1.0.0",
+    "@near-js/crypto": "^2.3.0",
+    "bootstrap": "^5",
+    "bootstrap-icons": "^1.11.3",
+    "bs58": "^6.0.0",
+    "near-api-js": "^6.3.0",
+    "next": "15.5.2",
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.5.2",
+    "typescript": "^5"
+  },
+  "pnpm": {
+    "overrides": {
+      "@fast-auth/browser": "link:../fast-auth/packages/sdks/browser"
+    }
+  }
+}
