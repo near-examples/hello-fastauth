@@ -28,7 +28,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      # Install pnpm
+      - name: Clone dependency
+        run: git clone https://github.com/Peersyst/fast-auth.git ../fast-auth
       - uses: pnpm/action-setup@v4
         with:
           version: 10 # or whatever version you use
