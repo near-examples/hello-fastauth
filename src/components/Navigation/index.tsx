@@ -4,44 +4,29 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 import NearLogo from "/public/near-logo.svg";
-import { useFastAuth } from "@/hooks/use-fast-auth";
-import assert from "assert";
+import { useFastAuth } from "@/context/useFastAuth";
 
 export const Navigation = () => {
   const [action, setAction] = useState(() => () => {});
   const [label, setLabel] = useState("Loading...");
-  const { isLoggedIn, client } = useFastAuth();
-
-  console.log("client", client);
+  const { nearAccount, loading, signIn, signOut } = useFastAuth();
 
   useEffect(() => {
-    if (!client) return;
+    if (loading) return;
 
-    if (isLoggedIn) {
+    if (nearAccount) {
       setAction(() => signOut);
-      setLabel(`Logout`);
+      setLabel(`Logout ${nearAccount.accountId}`);
     } else {
       setAction(() => signIn);
       setLabel("Login via FastAuth");
     }
-  }, [isLoggedIn, client]);
-
-  function signIn() {
-    assert(client);
-
-    client.login();
-  }
-
-  function signOut() {
-    assert(client);
-
-    client.logout();
-  }
+  }, [nearAccount, loading]);
 
   return (
     <nav className="navbar navbar-expand-lg">
       <div className="container-fluid">
-        <Link href="/" passHref legacyBehavior>
+        <Link href="/" passHref>
           <Image
             priority
             src={NearLogo}

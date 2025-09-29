@@ -10,8 +10,12 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "@fast-auth/browser": "1.0.0",
-    "@near-js/crypto": "^2.3.0",
+    "@fast-auth/browser": "link:../fast-auth/packages/sdks/browser",
+    "@near-js/accounts": "^2.3.2",
+    "@near-js/crypto": "^2.3.1",
+    "@near-js/providers": "^2.3.2",
+    "@near-js/signers": "^2.3.2",
+    "@near-js/tokens": "^2.3.2",
     "bootstrap": "^5",
     "bootstrap-icons": "^1.11.3",
     "bs58": "^6.0.0",
@@ -22,6 +26,7 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@near-js/transactions": "^2.3.2",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
